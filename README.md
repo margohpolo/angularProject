@@ -52,6 +52,7 @@
 2. Create CRUD Forms
 
 - Created List for displaying all Users, with Add/Edit/Delete buttons (buttons not working yet)
-- To Dos:  
+**To Dos:**  
+[] Tidy up Data in API (Currently random strings)    
   [] Add/Edit - (Click) will open a Modal with Form (populated if required)  
   [] Delete - "Are You Sure?" (Delete/Cancel buttons)
