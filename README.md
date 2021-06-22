@@ -35,3 +35,11 @@
 - Contact Form Component
 - 2 Separate Directives for checking Username & Email Validity (\*\*Not 100% Working Yet; WIP)
 - Local Browser Storage (\*\*Not Implemented Yet; WIP)
+
+---
+
+### 21 June Assignment
+
+1. Create an API for Users
+
+2. Create CRUD Forms

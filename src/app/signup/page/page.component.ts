@@ -1,18 +1,20 @@
-import { Component, OnInit,ViewChild,AfterViewInit,ElementRef} from '@angular/core';
-import { SignUpComponent } from '../sign-up/sign-up.component';
+import { Component, OnInit } from '@angular/core';
+
+// import { SignupformComponent } from '../signupform/signupform.component';
 
 @Component({
-  selector: 'app-list-of-registered-users',
-  templateUrl: './list-of-registered-users.component.html',
-  styleUrls: ['./list-of-registered-users.component.css']
+  selector: 'app-page',
+  templateUrl: './page.component.html',
+  styleUrls: ['./page.component.css']
 })
-export class ListOfRegisteredUsersComponent implements OnInit,AfterViewInit {
+export class PageComponent implements OnInit {
+
   allUser = [];
   usersFromChild=[];
   user = {
     name:"Alex"
   }
-  @ViewChild(SignUpComponent,{static: true}) child;
+  // @ViewChild(SignupformComponent,{static: true}) child;
   //@ViewChild('fname',{static: false,read:ElementRef}) firstname: ElementRef;
   //@ViewChild('nameInput',{static: false,read:ElementRef}) someInput: ElementRef;
 
@@ -29,13 +31,14 @@ export class ListOfRegisteredUsersComponent implements OnInit,AfterViewInit {
   }
 
   ngAfterViewInit(){
-    this.usersFromChild = this.child.message;
+    // this.usersFromChild = this.child.message;
+
     //this.someInput.nativeElement.value = "Jugal";
     //this.firstname.nativeElement.style.border = "3px dashed green";
   }
   ngAfterViewChecked(){
-    this.usersFromChild = this.child.usersData;
-    console.log(this.usersFromChild);
+    // this.usersFromChild = this.child.usersData;
+    // console.log(this.usersFromChild);
   }
   updateUser(){
     this.user.name = "Murali";

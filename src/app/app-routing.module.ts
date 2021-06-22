@@ -6,7 +6,6 @@ import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { IndustriesComponent } from './industries/industries.component';
 import { InsightsComponent } from './insights/insights.component';
-import { ListOfRegisteredUsersComponent } from './list-of-registered-users/list-of-registered-users.component';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { Login } from './_guards/login.service';
@@ -40,7 +39,8 @@ const routes: Routes = [
     path:'login', component: LoginComponent,canDeactivate:[UnsavedChangesGuard]
   },
   {
-    path:'signup',component: ListOfRegisteredUsersComponent
+    path:'signup',
+    loadChildren: () => import('./signup/signup.module').then(m => m.SignupModule)
   },
   {
     path:'**',component: PageNotFoundComponent

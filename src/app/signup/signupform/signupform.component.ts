@@ -1,14 +1,15 @@
-import { Component, OnInit,Output,EventEmitter,ViewChild,ElementRef,ChangeDetectionStrategy,DoCheck,OnChanges, Input } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter,ViewChild,ElementRef,ChangeDetectionStrategy,DoCheck,OnChanges, Input } from '@angular/core';
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
-import { Users } from '../_helpers/interfaces/userDetails';
+
+import { Users } from '../../_helpers/interfaces/userDetails';
 
 @Component({
-  selector: 'app-sign-up',
-  templateUrl: './sign-up.component.html',
-  styleUrls: ['./sign-up.component.css'],
+  selector: 'app-signupform',
+  templateUrl: './signupform.component.html',
+  styleUrls: ['./signupform.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SignUpComponent implements OnInit {
+export class SignupformComponent implements OnInit {
   registerForm: FormGroup;
   submited:boolean;
   usersData: Users;

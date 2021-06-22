@@ -20,8 +20,6 @@ import { LoginComponent } from './login/login.component';
 
 //Loading UnsavedChangesGuard
 import { UnsavedChangesGuard } from './_guards/un-saved-changes-guard.service';
-import { SignUpComponent } from './sign-up/sign-up.component';
-import { ListOfRegisteredUsersComponent } from './list-of-registered-users/list-of-registered-users.component';
 import { UserDataDisplayComponent } from './user-data-display/user-data-display.component';
 import { HighlightDirective } from './_directives/highlight.directive';
 import { CustomLoopDirective } from './_directives/custom-loop.directive';
@@ -51,8 +49,6 @@ import { EmailDirective } from './contact/email.directive';
     ServicesComponent,
     ServicecardComponent,
     LoginComponent,
-    SignUpComponent,
-    ListOfRegisteredUsersComponent,
     UserDataDisplayComponent,
     HighlightDirective,
     CustomLoopDirective,
