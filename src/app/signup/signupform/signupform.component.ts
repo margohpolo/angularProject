@@ -16,37 +16,30 @@ export class SignupformComponent implements OnInit {
   message: string = "This is child Message";
   @Output() PostData = new EventEmitter<FormUser>();
   @Input('formuser') formuser;
-  @ViewChild('fname',{static: false,read:ElementRef}) firstname: ElementRef;
-  constructor(private formBuilder: FormBuilder ) {
+  // @ViewChild('fname',{static: false,read:ElementRef}) firstname: ElementRef;
+  constructor(private formBuilder: FormBuilder) {
     this.submitted = false;
    }
 
   ngOnInit() {
-    //debugger;
-    // this.signUpForm = this.formBuilder.group({
-    //   firstname:['',Validators.required],
-    //   lastname:['',Validators.required],
-    //   useremail:['',[Validators.required,Validators.email]],
-    //   country:['',Validators.required],
-    //   address:['',Validators.required]
-    // });
 
-    this.signUpForm = new FormGroup({
-      'userData': new FormGroup({
-        'firstname': new FormControl(null, [Validators.required]),
-        'lastname': new FormControl(null, [Validators.required]),
-        'useremail': new FormControl(null, [Validators.required, Validators.email]),
-        'country': new FormControl(null, [Validators.required]),
-        'address': new FormControl(null, [Validators.required])
-      })
+    this.signUpForm = this.formBuilder.group({
+      firstname:['',Validators.required],
+      lastname:['',Validators.required],
+      useremail:['',[Validators.required,Validators.email]],
+      country:['SG',Validators.required],
+      address:['',Validators.required]
     });
 
     console.log("NgOnInit()");
 
   }
+
   get f(){
     return this.signUpForm.controls;
   }
+
+
   handleSubmit(){
     this.submitted = true;
     //console.log(this.registerForm.value);
@@ -64,7 +57,7 @@ export class SignupformComponent implements OnInit {
     console.log("DO CHECK")
   }
   ngAfterViewInit(){
-    this.firstname.nativeElement.style.border = "3px dashed green";
+    // this.firstname.nativeElement.style.border = "3px dashed green";
   }
 
   onScroll(){

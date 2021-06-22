@@ -8,7 +8,7 @@ import { PageUser } from 'src/app/_helpers/interfaces/userDetails';
 })
 export class SignuplistComponent implements OnInit {
 
-  @Input('userList') UserList: PageUser[];
+  UserList: PageUser[];
   constructor() {
     console.log(this.UserList);
   }
@@ -16,7 +16,23 @@ export class SignuplistComponent implements OnInit {
   ngOnInit() {
     //console.log(this.UserList);
     //alert('ngOnInit');
+
   }
+
+  // To Edit
+  // ngOnInit() {
+  //   this.userService.getAllUsers().subscribe(res => {
+  //     console.log("All Users ", res);
+  //     this.allUsers = res;
+  //     this.loading = res.loading;
+  //     this.errors = res.errors;
+  //   });
+  // }
+
+  // ngOnDestroy() {
+  //   this.userService.getAllUsers().unsubscribe();
+  // }
+
   ngAfterViewChecked(){
     //alert('ngAfterViewChecked');
     if(this.UserList.length>0){

@@ -1,7 +1,7 @@
 export interface FormUser{
   firstname:string,
   lastname:string,
-  email:string,
+  useremail:string,
   country:string,
   address:string
 }

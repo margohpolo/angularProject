@@ -31,6 +31,7 @@ import { ServiceSvc } from './services/services.service';
 import { ContactService } from './contact/contact.service';
 import { UsernameDirective } from './contact/username.directive';
 import { EmailDirective } from './contact/email.directive';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   declarations: [

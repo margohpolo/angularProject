@@ -43,6 +43,10 @@ const routes: Routes = [
     loadChildren: () => import('./signup/signup.module').then(m => m.SignupModule)
   },
   {
+    path:'users',
+    loadChildren: () => import('./users/users.module').then(m => m.UsersModule)
+  },
+  {
     path:'**',component: PageNotFoundComponent
   }
 ];

@@ -12,6 +12,8 @@ export class PageComponent implements OnInit {
 
   formUsers: FormUser[];
 
+  submittedUser: FormUser;
+
   PageUsers: PageUser[];
 
   // usersFromChild=[];
