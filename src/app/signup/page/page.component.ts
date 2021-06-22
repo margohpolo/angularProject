@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-// import { SignupformComponent } from '../signupform/signupform.component';
+import { FormUser, PageUser } from '../../_helpers/interfaces/userDetails';
+
 
 @Component({
   selector: 'app-page',
@@ -9,11 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageComponent implements OnInit {
 
-  allUser = [];
-  usersFromChild=[];
-  user = {
-    name:"Alex"
-  }
+  formUsers: FormUser[];
+
+  PageUsers: PageUser[];
+
+  // usersFromChild=[];
+
+  // user = {
+  //   name:"Alex"
+  // }
   // @ViewChild(SignupformComponent,{static: true}) child;
   //@ViewChild('fname',{static: false,read:ElementRef}) firstname: ElementRef;
   //@ViewChild('nameInput',{static: false,read:ElementRef}) someInput: ElementRef;
@@ -25,7 +30,7 @@ export class PageComponent implements OnInit {
   }
 
   getRegisteredUser(event){
-    this.allUser.push(event);
+    this.formUsers.push(event);
     // console.log('List of registedred users');
     // console.log(this.allUser);
   }
@@ -41,7 +46,7 @@ export class PageComponent implements OnInit {
     // console.log(this.usersFromChild);
   }
   updateUser(){
-    this.user.name = "Murali";
+    // this.user.name = "Murali";
   }
 
 }

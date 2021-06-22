@@ -1,7 +1,7 @@
 import { Component, OnInit, Output,EventEmitter,ViewChild,ElementRef,ChangeDetectionStrategy,DoCheck,OnChanges, Input } from '@angular/core';
-import { FormBuilder,FormGroup,Validators } from '@angular/forms';
+import { FormBuilder,FormControl,FormGroup,Validators } from '@angular/forms';
 
-import { Users } from '../../_helpers/interfaces/userDetails';
+import { FormUser } from '../../_helpers/interfaces/userDetails';
 
 @Component({
   selector: 'app-signupform',
@@ -10,41 +10,52 @@ import { Users } from '../../_helpers/interfaces/userDetails';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SignupformComponent implements OnInit {
-  registerForm: FormGroup;
-  submited:boolean;
-  usersData: Users;
+  signUpForm: FormGroup;
+  submitted:boolean;
+  userData: FormUser;
   message: string = "This is child Message";
-  @Output() PostData = new EventEmitter<Users>();
-  @Input('user') user;
+  @Output() PostData = new EventEmitter<FormUser>();
+  @Input('formuser') formuser;
   @ViewChild('fname',{static: false,read:ElementRef}) firstname: ElementRef;
   constructor(private formBuilder: FormBuilder ) {
-    this.submited = false;
+    this.submitted = false;
    }
 
   ngOnInit() {
     //debugger;
-    this.registerForm = this.formBuilder.group({
-      firstname:['',Validators.required],
-      lastname:['',Validators.required],
-      useremail:['',[Validators.required,Validators.email]],
-      country:['',Validators.required],
-      address:['',Validators.required]
+    // this.signUpForm = this.formBuilder.group({
+    //   firstname:['',Validators.required],
+    //   lastname:['',Validators.required],
+    //   useremail:['',[Validators.required,Validators.email]],
+    //   country:['',Validators.required],
+    //   address:['',Validators.required]
+    // });
+
+    this.signUpForm = new FormGroup({
+      'userData': new FormGroup({
+        'firstname': new FormControl(null, [Validators.required]),
+        'lastname': new FormControl(null, [Validators.required]),
+        'useremail': new FormControl(null, [Validators.required, Validators.email]),
+        'country': new FormControl(null, [Validators.required]),
+        'address': new FormControl(null, [Validators.required])
+      })
     });
+
     console.log("NgOnInit()");
 
   }
   get f(){
-    return this.registerForm.controls;
+    return this.signUpForm.controls;
   }
   handleSubmit(){
-    this.submited = true;
+    this.submitted = true;
     //console.log(this.registerForm.value);
-    this.usersData = this.registerForm.value;
+    this.userData = this.signUpForm.value;
 
     this.message = "This is child Message Updated";
 
     //console.log(this.usersData);
-    this.PostData.emit(this.usersData)
+    this.PostData.emit(this.userData)
   }
   ngOnChanges(){
     console.log("CHANGES")

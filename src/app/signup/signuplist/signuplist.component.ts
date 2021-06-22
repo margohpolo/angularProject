@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { PageUser } from 'src/app/_helpers/interfaces/userDetails';
 
 @Component({
   selector: 'app-signuplist',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignuplistComponent implements OnInit {
 
-  constructor() { }
+  @Input('userList') UserList: PageUser[];
+  constructor() {
+    console.log(this.UserList);
+  }
 
   ngOnInit() {
+    //console.log(this.UserList);
+    //alert('ngOnInit');
+  }
+  ngAfterViewChecked(){
+    //alert('ngAfterViewChecked');
+    if(this.UserList.length>0){
+      console.log(this.UserList);
+    }
   }
 
 }

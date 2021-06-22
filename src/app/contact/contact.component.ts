@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Users } from '../_helpers/interfaces/userDetails';
+import { FormUser } from '../_helpers/interfaces/userDetails';
 
 @Component({
   selector: 'app-contact',
@@ -12,9 +12,9 @@ export class ContactComponent implements OnInit {
 
   contactForm: FormGroup;
   submitted:boolean;
-  usersData: Users;
+  userData: FormUser;
   message: string = "This is child Message";
-  @Output() PostData = new EventEmitter<Users>();
+  @Output() PostData = new EventEmitter<FormUser>();
   @Input('user') user;
   @ViewChild('fname',{static: false,read:ElementRef}) username: ElementRef;
   constructor(private formBuilder: FormBuilder) {
@@ -37,12 +37,12 @@ export class ContactComponent implements OnInit {
   handleSubmit(){
     this.submitted = true;
     //console.log(this.contactForm.value);
-    this.usersData = this.contactForm.value;
+    this.userData = this.contactForm.value;
 
     this.message = "handleSubmit()";
 
     //console.log(this.usersData);
-    this.PostData.emit(this.usersData);
+    this.PostData.emit(this.userData);
   }
   ngOnChanges(){
     console.log("OnChanges");
