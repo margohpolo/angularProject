@@ -2,7 +2,7 @@
 
 ## Note: Deployment Branch **NOT** updated yet
 
-### (Landing Page)[https://margohpolo.github.io/angularProject/] - ServicesModule (i.e. Supply Chain, AI etc.)
+### [Landing Page](https://margohpolo.github.io/angularProject/) - ServicesModule (i.e. Supply Chain, AI etc.)
 
 - Services Module Lazy-Loads
 - Custom Class in a Model
@@ -11,28 +11,28 @@
 - OnClick of a button in Card -> The Corresponding Data is sent to a Reusable Component -> Load Resuable Component with URI of corresponding Data
 - **Note:** Card Component & said Reusable Component are `Siblings`
 
-### (Login)[https://margohpolo.github.io/angularProject/login]
+### [Login](https://margohpolo.github.io/angularProject/login)
 
 - WIP: Authentication API Integration
 
-### (Contact)[https://margohpolo.github.io/angularProject/contact]
+### [Contact](https://margohpolo.github.io/angularProject/contact)
 
 -
 
-### (Sign Up)[https://margohpolo.github.io/angularProject/signup]
+### [Sign Up](https://margohpolo.github.io/angularProject/signup)
 
 - SignUp Module Lazy-Loads
 -
 
-### (Users)[https://margohpolo.github.io/angularProject/users]
+### [Users](https://margohpolo.github.io/angularProject/users)
 
 - Users Module Lazy-Loads
-- Calls data from (Mockend API)[https://github.com/margohpolo/angularProjectAPI/blob/main/README.md] (Because it's free)
+- Calls data from [Mockend API](https://github.com/margohpolo/angularProjectAPI/blob/main/README.md) (Because it's free)
 - WIP: Reusable Form Component for Add/Edit User, that will display in a Modal
 - WIP: Connecting Delete button to the Delete function in Service
 - ~~WIP: Deploying Node-Express API + Connect to a clone of this Module~~
 
-### (Local-ItemList)[https://margohpolo.github.io/angularProject/local-itemlist]
+### [Local-ItemList](https://margohpolo.github.io/angularProject/local-itemlist)
 
 - Local-ItemList Module Lazy-Loads
 - Left column: contains a List of Items instantiated in the LocalItemListService
@@ -43,7 +43,7 @@
 - Session Storage is instantiated OnInit()
 - With any Add, Update or Delete, Session Storage is updated via the Parent Component's ngDoCheck()
 
-### (Blog)[https://margohpolo.github.io/angularProject/blog]
+### [Blog](https://margohpolo.github.io/angularProject/blog)
 
 - WIP: Blog Posts' API Creation
 
