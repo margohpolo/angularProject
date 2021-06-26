@@ -1,0 +1,22 @@
+<div class="row col-md-12">
+    <div class="col-md-4" style="border:1px solid grey; padding-left: 25px;">
+        <h3>Item List:</h3>
+        <ul class="list-group">
+            <a class="list-group-item" style="cursor: pointer;" *ngFor="let item of items; let i = index" (click)="onEditItem(i)">
+                {{ item.item }} - {{ item.quantity }}
+            </a>
+        </ul>
+    </div>
+    <div class="col-md-4" style="border:1px solid grey; ">
+        <app-edit-item></app-edit-item>
+    </div>
+    <div class="col-md-4" style="border:1px solid grey;">
+        <h3>Item List From Session Storage:</h3>
+        <br />
+        <ul>
+            <li *ngFor="let item of seshItems">
+                {{ item.item }} - {{ item.quantity }}
+            </li>
+        </ul>
+    </div>
+</div>

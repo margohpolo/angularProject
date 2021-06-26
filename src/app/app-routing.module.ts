@@ -8,6 +8,7 @@ import { IndustriesComponent } from './industries/industries.component';
 import { InsightsComponent } from './insights/insights.component';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { RxjsOperatorsComponent } from './rxjs-operators/rxjs-operators.component';
 import { Login } from './_guards/login.service';
 import { UnsavedChangesGuard } from './_guards/un-saved-changes-guard.service';
 
@@ -45,6 +46,17 @@ const routes: Routes = [
   {
     path:'users',
     loadChildren: () => import('./users/users.module').then(m => m.UsersModule)
+  },
+  {
+    path: 'rxjs-operators', component: RxjsOperatorsComponent
+  },
+  {
+    path:'local-itemlist',
+    loadChildren: () => import('./local-itemlist/local-itemlist.module').then(m => m.LocalItemlistModule)
+  },
+  {
+    path:'blog',
+    loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule)
   },
   {
     path:'**',component: PageNotFoundComponent

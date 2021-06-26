@@ -31,7 +31,8 @@ import { ServiceSvc } from './services/services.service';
 import { ContactService } from './contact/contact.service';
 import { UsernameDirective } from './contact/username.directive';
 import { EmailDirective } from './contact/email.directive';
-import { UsersComponent } from './users/users.component';
+import { RxjsOperatorsComponent } from './rxjs-operators/rxjs-operators.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -54,13 +55,15 @@ import { UsersComponent } from './users/users.component';
     RotateAnimationDirective,
     PlaceholderDirective,
     UsernameDirective,
-    EmailDirective
+    EmailDirective,
+    RxjsOperatorsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [UnsavedChangesGuard, ServiceSvc, ServiceResolver, ContactService],
   bootstrap: [AppComponent],

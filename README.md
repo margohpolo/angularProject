@@ -1,3 +1,58 @@
+# AngularAccenture: Consolidated Documentation - Last Updated 27 June 0045hrs
+
+## Note: Deployment Branch **NOT** updated yet
+
+### (Landing Page)[https://margohpolo.github.io/angularProject/] - ServicesModule (i.e. Supply Chain, AI etc.)
+
+- Services Module Lazy-Loads
+- Custom Class in a Model
+- Data instantiation handled by a Service
+- Cards on Landing Page created without a packaged Ng Directive (i.e. used Placeholder Directive & Resolver + ComponentFactory + @ViewChild)
+- OnClick of a button in Card -> The Corresponding Data is sent to a Reusable Component -> Load Resuable Component with URI of corresponding Data
+- **Note:** Card Component & said Reusable Component are `Siblings`
+
+### (Login)[https://margohpolo.github.io/angularProject/login]
+
+- WIP: Authentication API Integration
+
+### (Contact)[https://margohpolo.github.io/angularProject/contact]
+
+-
+
+### (Sign Up)[https://margohpolo.github.io/angularProject/signup]
+
+- SignUp Module Lazy-Loads
+-
+
+### (Users)[https://margohpolo.github.io/angularProject/users]
+
+- Users Module Lazy-Loads
+- Calls data from (Mockend API)[https://github.com/margohpolo/angularProjectAPI/blob/main/README.md] (Because it's free)
+- WIP: Reusable Form Component for Add/Edit User, that will display in a Modal
+- WIP: Connecting Delete button to the Delete function in Service
+- ~~WIP: Deploying Node-Express API + Connect to a clone of this Module~~
+
+### (Local-ItemList)[https://margohpolo.github.io/angularProject/local-itemlist]
+
+- Local-ItemList Module Lazy-Loads
+- Left column: contains a List of Items instantiated in the LocalItemListService
+- OnClick of an Item -> Item Details are Populated in the Form in the Center -> Either Update this Item's Details, or Delete this Item, or Clear the Form
+- Center column: Child Component Form also allows for Adding a new Item
+- Form Control: Form cannot have empty fields
+- Right column: Item List from Session Storage
+- Session Storage is instantiated OnInit()
+- With any Add, Update or Delete, Session Storage is updated via the Parent Component's ngDoCheck()
+
+### (Blog)[https://margohpolo.github.io/angularProject/blog]
+
+- WIP: Blog Posts' API Creation
+
+---
+
+---
+
+---
+
 # AngularAccenture - Last Updated 23 June 0350hrs
 
 ### 19 June Assignment Requirements - As Per Task List
@@ -52,7 +107,7 @@
 2. Create CRUD Forms
 
 - Created List for displaying all Users, with Add/Edit/Delete buttons (buttons not working yet)
-**To Dos:**  
-[] Tidy up Data in API (Currently random strings)    
-  [] Add/Edit - (Click) will open a Modal with Form (populated if required)  
-  [] Delete - "Are You Sure?" (Delete/Cancel buttons)
+  **To Dos:**  
+  [] Tidy up Data in API (Currently random strings)  
+   [] Add/Edit - (Click) will open a Modal with Form (populated if required)  
+   [] Delete - "Are You Sure?" (Delete/Cancel buttons)
