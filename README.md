@@ -1,4 +1,4 @@
-# AngularAccenture: Consolidated Documentation - Last Updated 27 June 0045hrs
+# AngularAccenture: Consolidated Documentation - Last Updated 27 June
 
 ## Note: Deployment Branch **NOT** updated yet
 
@@ -45,7 +45,11 @@
 
 ### [Blog](https://margohpolo.github.io/angularProject/blog)
 
-- WIP: Blog Posts' API Creation
+- Blog calls data from a [different Mockend API](https://github.com/margohpolo/angularProjectBlogAPI/blob/main/README.md) (Because it's free)
+
+- Blog Landing Page: Displays blog entries; Pagination WIP
+
+- On Click: goes to single blog entry page (WIP; not a priority as exactly the same concept has already been demonstrated in Services section)
 
 ---
 

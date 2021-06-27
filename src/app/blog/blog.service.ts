@@ -4,23 +4,22 @@ import { Observable, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { catchError, retry } from 'rxjs/operators';
 
-export interface User {
+export interface Post {
     id: number;
-    firstname: string;
-    lastname: string;
-    useremail: string;
-    country: string;
+    title: string;
+    body: string;
 }
 
-export interface Users {
+export interface Posts {
     isAvailable: boolean;
-    users: User[];
+    posts: Post[];
 }
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class BlogService {
     
     myAppUrl: string;
     myApiUrl: string;
@@ -31,8 +30,8 @@ export class UserService {
   };
 
     constructor(private http: HttpClient) {        
-      this.myAppUrl = environment.mockendUsersUrl;
-      this.myApiUrl = '/users';
+      this.myAppUrl = environment.mockendBlogUrl;
+      this.myApiUrl = '/posts';
     }
 
     errorHandler(error) {
@@ -48,18 +47,18 @@ export class UserService {
         return throwError(errorMessage);
     }
 
-    getAllUsers():Observable<User[]> {
+    getAllPosts():Observable<Post[]> {
         // return this.http.get<User[]>(environment.mockendUsersUrl + "users", {observe: 'response'});
-        return this.http.get<User[]>(this.myAppUrl + this.myApiUrl)
+        return this.http.get<Post[]>(this.myAppUrl + this.myApiUrl)
             .pipe(
                 retry(1),
                 catchError(this.errorHandler)
             );
     }
 
-    getUserById(userId:number):Observable<User> {
+    getPostById(postId:number):Observable<Post> {
         // return this.http.get<User>(`${environment.mockendUsersUrl}/users/${userId}`, {observe: 'response'}).pipe(map(res => res));
-        return this.http.get<User>(this.myAppUrl + this.myApiUrl + '/' + userId)
+        return this.http.get<Post>(this.myAppUrl + this.myApiUrl + '/' + postId)
             .pipe(
             retry(1),
             catchError(this.errorHandler)
@@ -67,16 +66,16 @@ export class UserService {
     }
     
 
-    createUser(userDetails:User):Observable<User> {
+    createPost(postDetails:Post):Observable<Post> {
         // return this.http.post<User>(`${environment.mockendUsersUrl}/users`, userDetails);
-        return this.http.post<User>(this.myAppUrl + this.myApiUrl, JSON.stringify(userDetails), this.httpOptions)
+        return this.http.post<Post>(this.myAppUrl + this.myApiUrl, JSON.stringify(postDetails), this.httpOptions)
             .pipe(
                 retry(1),
                 catchError(this.errorHandler)
             );
     }
 
-    updateUser(userId:number, userUpdate:User):Observable<User>{
+    updatePost(postId:number, postUpdate:Post):Observable<Post>{
         // const httpOptions = {
         // method: 'PUT',
         // body: JSON.stringify(userUpdate),
@@ -87,16 +86,16 @@ export class UserService {
 
         // return this.http.put<User>(`${environment.mockendUsersUrl}/users/${userId}`, JSON.stringify(userUpdate), httpOptions);
 
-        return this.http.put<User>(this.myAppUrl + this.myApiUrl + '/' + userId, JSON.stringify(userUpdate), this.httpOptions)
+        return this.http.put<Post>(this.myAppUrl + this.myApiUrl + '/' + postId, JSON.stringify(postUpdate), this.httpOptions)
             .pipe(
                 retry(1),
                 catchError(this.errorHandler)
             );
     }
         
-    deleteUser(userId:number):Observable<User>{
+    deletePost(postId:number):Observable<Post>{
         // return this.http.delete<User>(`${environment.mockendUsersUrl}/users/${userId}`);
-        return this.http.delete<User>(this.myAppUrl + this.myApiUrl + '/' + userId)
+        return this.http.delete<Post>(this.myAppUrl + this.myApiUrl + '/' + postId)
             .pipe(
                 retry(1),
                 catchError(this.errorHandler)

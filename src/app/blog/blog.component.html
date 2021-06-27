@@ -1,1 +1,11 @@
-<p>blog works!</p>
+<section class="row w-100" style="display:flex;">
+    <div *ngFor="let post of (allPost$ | async)" class="card" style="width: 18rem;">
+        <h3>Post ID: {{post.id}}</h3>
+        <div class="card-body">
+            <h5 class="card-title">Title: {{post.title}}</h5>
+            <a [routerLink]="['/blog', post.id]" routerLinkActive="active" class="btn btn-primary"
+                id="{{post.id}}" [ngStyle]="{'background-color': 'red'}" (click)="componentRedirect(post.id)">
+                Read More</a>
+        </div>
+    </div>
+</section>

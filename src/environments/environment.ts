@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  mockendUrl: 'https://mockend.com/margohpolo/angularProjectAPI'
+  mockendUsersUrl: 'https://mockend.com/margohpolo/angularProjectAPI',
+  mockendBlogUrl: 'https://mockend.com/margohpolo/angularProjectBlogAPI'
 };
 
 /*
