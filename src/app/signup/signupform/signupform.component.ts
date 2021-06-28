@@ -1,5 +1,6 @@
 import { Component, OnInit, Output,EventEmitter,ViewChild,ElementRef,ChangeDetectionStrategy,DoCheck,OnChanges, Input } from '@angular/core';
 import { FormBuilder,FormControl,FormGroup,Validators } from '@angular/forms';
+import { AuthService } from 'src/app/_helpers/loginservices/auth.service';
 
 import { FormUser } from '../../_helpers/interfaces/userDetails';
 
@@ -10,46 +11,63 @@ import { FormUser } from '../../_helpers/interfaces/userDetails';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SignupformComponent implements OnInit {
-  signUpForm: FormGroup;
-  submitted:boolean;
-  userData: FormUser;
-  message: string = "This is child Message";
-  @Output() PostData = new EventEmitter<FormUser>();
-  @Input('formuser') formuser;
+  // signUpForm: FormGroup;
+  // submitted:boolean;
+  // userData: FormUser;
+  // message: string = "This is child Message";
+  // @Output() PostData = new EventEmitter<FormUser>();
+  // @Input('formuser') formuser;
   // @ViewChild('fname',{static: false,read:ElementRef}) firstname: ElementRef;
-  constructor(private formBuilder: FormBuilder) {
-    this.submitted = false;
-   }
+  // constructor(private formBuilder: FormBuilder) {
+  //   this.submitted = false;
+  //  }
+
+  form: any = {};
+  isSuccessful = false;
+  isSignUpFailed = false;
+  errorMsg = '';
+
+  constructor(private authService: AuthService) {}
 
   ngOnInit() {
 
-    this.signUpForm = this.formBuilder.group({
-      firstname:['',Validators.required],
-      lastname:['',Validators.required],
-      useremail:['',[Validators.required,Validators.email]],
-      country:['SG',Validators.required],
-      address:['',Validators.required]
-    });
+    // this.signUpForm = this.formBuilder.group({
+    //   username:['',Validators.required],
+    //   email:['',[Validators.required,Validators.email]],
+    //   password:['',Validators.required]
+    // });
 
-    console.log("NgOnInit()");
+    // console.log("NgOnInit()");
 
   }
 
   get f(){
-    return this.signUpForm.controls;
+    return this.form.controls;
   }
 
-
-  handleSubmit(){
-    this.submitted = true;
-    //console.log(this.registerForm.value);
-    this.userData = this.signUpForm.value;
-
-    this.message = "This is child Message Updated";
-
-    //console.log(this.usersData);
-    this.PostData.emit(this.userData)
+  onSubmit() {
+    this.authService.register(this.form).subscribe(
+      data => {
+        console.log(data);
+        this.isSuccessful = true;
+        this.isSignUpFailed = false;
+      }, err => {
+        this.errorMsg = err.error.message;
+        this.isSignUpFailed = true;
+      }
+    );
   }
+
+  // handleSubmit(){
+  //   this.submitted = true;
+  //   //console.log(this.registerForm.value);
+  //   this.userData = this.signUpForm.value;
+
+  //   this.message = "This is child Message Updated";
+
+  //   //console.log(this.usersData);
+  //   this.PostData.emit(this.userData)
+  // }
   ngOnChanges(){
     console.log("CHANGES")
   }

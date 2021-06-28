@@ -17,7 +17,7 @@ export class BlogComponent implements OnInit {
 
   constructor(private blogService: BlogService, private _router: Router) { }
 
-  @Output() postIdEmitter = new EventEmitter<number>();
+  // @Output() postIdEmitter = new EventEmitter<number>();
 
   ngOnInit() {
     // this.allPost$ = this.blogService.getAllPosts().pipe(map(res => res)).subscribe(res => res);

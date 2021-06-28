@@ -1,4 +1,4 @@
-# AngularAccenture: Consolidated Documentation - Last Updated 27 June
+# AngularAccenture: Consolidated Documentation - Last Updated 28 June
 
 ## Note: Deployment Branch **NOT** updated yet
 
@@ -13,7 +13,9 @@
 
 ### [Login](https://margohpolo.github.io/angularProject/login)
 
-- WIP: Authentication API Integration
+- Authentication API Integration (Folder: node-js-jwt-auth)
+- Login + JWT works
+- API **NOT** deployed as Effort not in scope of learning Angular Framework
 
 ### [Contact](https://margohpolo.github.io/angularProject/contact)
 
@@ -22,7 +24,8 @@
 ### [Sign Up](https://margohpolo.github.io/angularProject/signup)
 
 - SignUp Module Lazy-Loads
--
+- SignUp registers Username, Password & email address with a default account type of `admin`
+- API (Folder: node-js-jwt-auth) **NOT** deployed as Effort not in scope of learning Angular Framework
 
 ### [Users](https://margohpolo.github.io/angularProject/users)
 
@@ -47,17 +50,17 @@
 
 - Blog calls data from a [different Mockend API](https://github.com/margohpolo/angularProjectBlogAPI/blob/main/README.md) (Because it's free)
 
-- Blog Landing Page: Displays blog entries; Pagination WIP
+- Blog Landing Page: Displays blog entries; Pagination **WIP**
 
-- On Click: goes to single blog entry page (WIP; not a priority as exactly the same concept has already been demonstrated in Services section)
-
----
+- On Click: goes to single blog entry page (**WIP**; not a priority as exactly the same concept has already been demonstrated in Services section)
 
 ---
 
 ---
 
-# AngularAccenture - Last Updated 23 June 0350hrs
+---
+
+# AngularAccenture - Last Updated 23 June 0350hrs (\*no longer updated)
 
 ### 19 June Assignment Requirements - As Per Task List
 

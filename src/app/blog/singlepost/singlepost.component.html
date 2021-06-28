@@ -1,7 +1,7 @@
-<div style="display: grid; grid-gap: 20px;" *ngFor="let post of (post$ | async)">
-    <h2>{{ post.title }}</h2>
+<div style="display: grid; grid-gap: 20px;">
+    <h2>{{ post.title | String }}</h2>
     <br />
     <div style="text-align: left;">
-        <p>{{ post.body }}</p>
+        <p>{{ post.body | String }}</p>
     </div>
 </div>

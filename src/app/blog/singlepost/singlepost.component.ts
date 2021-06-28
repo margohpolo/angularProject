@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Data } from '@angular/router';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { BlogService, Post } from '../blog.service';
 
 @Component({
@@ -9,17 +11,25 @@ import { BlogService, Post } from '../blog.service';
 })
 export class SinglepostComponent implements OnInit {
 
-  @Input('postIdEmitter') postId: number;
+  // @Input('postIdEmitter') postId: number;
 
-  constructor(private blogService: BlogService) { }
+  constructor(private blogService: BlogService, private route: ActivatedRoute) { }
 
-  post$: Observable<Post>;
+  post: Post;
   
 
   ngOnInit() {
     // this.blogService.getPostById(this.postId).subscribe(res => this.post = res);
-    this.post$ = this.blogService.getPostById(this.postId);
-    console.log(this.post$);
+    // this.blogService.getPostById(Number(this.route.snapshot.paramMap.get('postId'))).pipe(map(res => {this.post = res})).subscribe();
+
+    // // Add Resolver
+    // this.route.data.subscribe(
+    //   (data: Data) => {
+    //     this.post = data['post'];
+    //   }
+    // );
+
+    console.log(this.post);
   }
 
 }

@@ -59,6 +59,10 @@ const routes: Routes = [
     loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule)
   },
   {
+    path:'material',
+    loadChildren: () => import('./_material/material.module').then(m => m.MaterialModule)
+  },
+  {
     path:'**',component: PageNotFoundComponent
   }
 ];

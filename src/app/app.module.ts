@@ -33,6 +33,7 @@ import { UsernameDirective } from './contact/username.directive';
 import { EmailDirective } from './contact/email.directive';
 import { RxjsOperatorsComponent } from './rxjs-operators/rxjs-operators.component';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [UnsavedChangesGuard, ServiceSvc, ServiceResolver, ContactService],
   bootstrap: [AppComponent],

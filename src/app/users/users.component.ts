@@ -35,16 +35,17 @@ export class UsersComponent implements OnInit {
 
 
   // These 3: Click -> send to Modal, sometimes populating form -> Action/Cancel btn
+  // use the data-target thingy
   addUser() {
-
+    console.log("Add User triggered.");
   }
 
   editUser(userId:string) {
-
+    console.log(`Edit User '$userId' triggered.`);
   }
 
   deleteUser(userId:string) {
-
+    console.log(`Delete User '$userId' triggered.`);
   }
 
   ngOnDestroy() {

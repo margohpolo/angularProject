@@ -4,11 +4,13 @@ import { NgModule } from "@angular/core";
 import { UserService } from "./user.service";
 import { UsersRoutingModule } from "./users-routing.module";
 import { UsersComponent } from "./users.component";
+import { UserformComponent } from './userform/userform.component';
 
 
 @NgModule({
   declarations: [
-    UsersComponent
+    UsersComponent,
+    UserformComponent
   ],
   imports: [
     CommonModule,

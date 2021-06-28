@@ -23,7 +23,7 @@ export class UnsavedChangesGuard implements CanDeactivate<LoginComponent> {
     console.log(component);
     console.log(currentRoute);
     console.log(currentState);
-    if(component.user==undefined && component.pass==undefined){
+    if(component.form.username==undefined && component.form.Password==undefined){
       return window.confirm('You have not loggedin , would you like to leave?');
     }else{
       return true
