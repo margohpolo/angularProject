@@ -1,0 +1,20 @@
+<section class="row col-md-12">
+    <div class="form-group">
+        <input type="text" class="form-control mb-4" placeholder="Search"  [(ngModel)]="query" id="listSearch" />
+    </div>
+</section>
+
+
+<section class="row col-md-12" style="display:flex;">
+    <div class="card" style="width:18rem;" *ngFor="let post of allPosts | searchPosts: query">
+        <div class="card-body">
+            <h5 class="card-title">{{post.title}}</h5>
+            <h3>{{post.heading}}</h3>
+            <p class="card-text">{{post.description.substring(0,100) + '...'}}</p>
+            <a class="btn btn-primary"
+                id="{{post.title}}" [ngStyle]="{'background-color': 'red'}">
+                Read More</a>
+        </div>
+    </div>
+
+</section>

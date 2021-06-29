@@ -63,6 +63,14 @@ const routes: Routes = [
     loadChildren: () => import('./_material/material.module').then(m => m.MaterialModule)
   },
   {
+    path:'custom-pipes',
+    loadChildren: () => import('./custom-pipes/custom-pipes.module').then(m => m.CustomPipesModule)
+  },
+  {
+    path:'search-posts',
+    loadChildren: () => import('./search-posts/search-posts.module').then(m => m.SearchPostsModule)
+  },
+  {
     path:'**',component: PageNotFoundComponent
   }
 ];

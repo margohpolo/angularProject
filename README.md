@@ -1,4 +1,4 @@
-# AngularAccenture: Consolidated Documentation - Last Updated 28 June
+# AngularAccenture: Consolidated Documentation - Last Updated 29 June
 
 ## Note: Deployment Branch **NOT** updated yet
 
@@ -31,9 +31,10 @@
 
 - Users Module Lazy-Loads
 - Calls data from [Mockend API](https://github.com/margohpolo/angularProjectAPI/blob/main/README.md) (Because it's free)
+- Uses AsyncPipe from CommonModule in the .Component.HTML
 - WIP: Reusable Form Component for Add/Edit User, that will display in a Modal
 - WIP: Connecting Delete button to the Delete function in Service
-- ~~WIP: Deploying Node-Express API + Connect to a clone of this Module~~
+- ~~WIP: Deploying Node-Express API + Connect to a clone of this Module~~ (Folder: **node_express**)
 
 ### [Local-ItemList](https://margohpolo.github.io/angularProject/local-itemlist)
 
@@ -53,6 +54,11 @@
 - Blog Landing Page: Displays blog entries; Pagination **WIP**
 
 - On Click: goes to single blog entry page (**WIP**; not a priority as exactly the same concept has already been demonstrated in Services section)
+
+### [Search Posts](https://margohpolo.github.io/angularProject/search-posts)
+
+- Implemented a Search Bar that filters the 12 Articles based on entered string
+- Also used `.substring()` to only display 101 characters from Article's Body, for better presentation
 
 ---
 
