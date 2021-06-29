@@ -1,6 +1,6 @@
 # AngularAccenture: Consolidated Documentation - Last Updated 29 June
 
-## Note: Deployment Branch **NOT** updated yet
+~~## Note: Deployment Branch **NOT** updated yet~~
 
 ### [Landing Page](https://margohpolo.github.io/angularProject/) - ServicesModule (i.e. Supply Chain, AI etc.)
 
@@ -25,12 +25,12 @@
 
 - SignUp Module Lazy-Loads
 - SignUp registers Username, Password & email address with a default account type of `admin`
-- API (Folder: node-js-jwt-auth) **NOT** deployed as Effort not in scope of learning Angular Framework
+- API (Folder: node-js-jwt-auth) **NOT** deployed (yet)
 
 ### [Users](https://margohpolo.github.io/angularProject/users)
 
 - Users Module Lazy-Loads
-- Calls data from [Mockend API](https://github.com/margohpolo/angularProjectAPI/blob/main/README.md) (Because it's free)
+- Calls data from [Mockend API](https://github.com/margohpolo/angularProjectAPI/blob/main/README.md)
 - Uses AsyncPipe from CommonModule in the .Component.HTML
 - WIP: Reusable Form Component for Add/Edit User, that will display in a Modal
 - WIP: Connecting Delete button to the Delete function in Service
@@ -49,7 +49,7 @@
 
 ### [Blog](https://margohpolo.github.io/angularProject/blog)
 
-- Blog calls data from a [different Mockend API](https://github.com/margohpolo/angularProjectBlogAPI/blob/main/README.md) (Because it's free)
+- Blog calls data from a [different Mockend API](https://github.com/margohpolo/angularProjectBlogAPI/blob/main/README.md)
 
 - Blog Landing Page: Displays blog entries; Pagination **WIP**
 
