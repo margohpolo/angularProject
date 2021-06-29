@@ -11,25 +11,30 @@ import { BlogService, Post } from '../blog.service';
 })
 export class SinglepostComponent implements OnInit {
 
-  // @Input('postIdEmitter') postId: number;
+  // @Input('postEmitter') post: Post;
+  post:Post;
 
   constructor(private blogService: BlogService, private route: ActivatedRoute) { }
 
-  post: Post;
+  
   
 
   ngOnInit() {
     // this.blogService.getPostById(this.postId).subscribe(res => this.post = res);
-    // this.blogService.getPostById(Number(this.route.snapshot.paramMap.get('postId'))).pipe(map(res => {this.post = res})).subscribe();
+    this.blogService.getPostById(Number(this.route.snapshot.paramMap.get('postId'))).subscribe(data => this.post = data);
 
-    // // Add Resolver
+    // // // // Add Resolver
     // this.route.data.subscribe(
     //   (data: Data) => {
     //     this.post = data['post'];
     //   }
     // );
 
-    console.log(this.post);
+    console.log("Single:", this.post);
+  }
+
+  ngOnDestroy() {
+    // unsubscribe
   }
 
 }

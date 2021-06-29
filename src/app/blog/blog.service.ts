@@ -1,5 +1,5 @@
 import { HttpHeaders, HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { catchError, retry } from 'rxjs/operators';
@@ -21,6 +21,8 @@ export interface Posts {
 })
 export class BlogService {
     
+    postEmitter = new EventEmitter<Post>();
+
     myAppUrl: string;
     myApiUrl: string;
     httpOptions = {

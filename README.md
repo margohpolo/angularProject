@@ -53,7 +53,7 @@
 
 - Blog Landing Page: Displays blog entries; Pagination **WIP**
 
-- On Click: goes to single blog entry page (**WIP**; not a priority as exactly the same concept has already been demonstrated in Services section)
+- On Click: goes to single blog entry page; currently working
 
 ### [Search Posts](https://margohpolo.github.io/angularProject/search-posts)
 
