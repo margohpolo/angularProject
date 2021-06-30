@@ -1,3 +1,24 @@
+# Final Test: `final-test` Module - 30 June
+
+- Entire section packaged in a single lazy-loading module
+
+### [Sign-In](https://margohpolo.github.io/angularProject/final-test/ft-login) / [Landing Page for final-test Module](https://margohpolo.github.io/angularProject/final-test)
+
+- Connects to local API in **node-js-jwt-auth** folder
+- Need to register login credentials? [Sign Up](https://margohpolo.github.io/angularProject/final-test/ft-signup) first!
+- Accounts are Admins by default
+- JWT & Httperrorinterceptor included
+
+### [Admin Dashboard](https://margohpolo.github.io/angularProject/final-test/admin)
+
+- Automated Redirecting from Login **WIP**
+- Displays a sample chart using [ngx-echarts](https://xieziyu.github.io/ngx-echarts/#/welcome) version 5 for compatibility with Angular 8
+
+### [Users API](https://margohpolo.github.io/angularProject/final-test/users)
+
+- Data Source: [JSONPlaceholder](https://jsonplaceholder.typicode.com/users)
+-
+
 # AngularAccenture: Consolidated Documentation - Last Updated 29 June
 
 ~~## Note: Deployment Branch **NOT** updated yet~~
