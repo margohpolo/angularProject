@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   mockendUsersUrl: 'https://mockend.com/margohpolo/angularProjectAPI',
-  mockendBlogUrl: 'https://mockend.com/margohpolo/angularProjectBlogAPI'
+  mockendBlogUrl: 'https://mockend.com/margohpolo/angularProjectBlogAPI',
+  typiCodeUrl: 'https://jsonplaceholder.typicode.com'
 };
 
 /*

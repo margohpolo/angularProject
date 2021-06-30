@@ -21,6 +21,10 @@ const routes: Routes = [
     path:'insights', component: InsightsComponent
   },
   {
+    path:'final-test',
+    loadChildren: () => import('./final-test/final-test.module').then(m => m.FinalTestModule)
+  },
+  {
     path:'services',
     loadChildren: () => import('./services/services.module').then(m => m.ServicesModule)
   },
